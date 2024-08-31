@@ -96,6 +96,11 @@ To trigger the Telegram notification, open the `index.html` file in a browser an
 
 ### 6. Customize the Notification
 The notification message sent to Telegram is defined in the `sendNotification` function in `notification.js` file. You can customize the message from the BOT by modifying the `message` variable.
+The function accept the `message` as prop, so you can run the function in different areas of your code, and pass a different message every time you call the function:
+
+```bash
+const data = await sendNotification(message);
+```
 
 ### 7. Deploy the Application
 Once you've tested everything locally, you can deploy the server to your preferred hosting environment (e.g., DigitalOcean, Heroku) to make it accessible online.
