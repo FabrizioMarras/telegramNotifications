@@ -32,6 +32,45 @@ npm install
 This will install express, dotenv, and cors.
 
 ### 3. Configure Environment Variables
+After creating the Bot in Telegram you will receive an API Token.
+Then, create a chat with your bot in Telegram. The chat can be also a group chat, if more users needs to receive the notification. Just add the bot to your chat group, and all the users in the group chat will see the notification when the message send a message in chat.
+Visit the following URL on your browser:
+
+```bash
+https://api.telegram.org/botYOUR_BOT_TOKEN/getUpdates
+
+```
+Add your API token to the URL replacing `YOUR_BOT_TOKEN`. You will see a json file like this:
+
+```bash
+{
+  "ok": true,
+  "result": [
+    {
+      "update_id": 123456789,
+      "message": {
+        "message_id": 1,
+        "from": {
+          "id": 987654321,
+          "is_bot": false,
+          "first_name": "YourName",
+          "username": "YourUsername",
+          ...
+        },
+        "chat": {
+          "id": 987654321,
+          "first_name": "YourName",
+          "username": "YourUsername",
+          "type": "private"
+        },
+        ...
+      }
+    }
+  ]
+}
+```
+This is your chat ID: `987654321`.
+
 Create a `.env` file in the root of your project directory and add the following environment variables:
 
 ```env
@@ -40,7 +79,7 @@ TELEGRAM_BOT_API_TOKEN=your_bot_token
 PORT=3000 # or any other port you want your server to run on
 ```
 
-Replace `your_chat_id` with your Telegram chat ID.
+Replace `your_chat_id` with your Telegram chat ID. 
 Replace `your_bot_token` with the API token you received from BotFather.
 
 ### 4. Run the Server
