@@ -31,8 +31,15 @@ npm install
 
 This will install express, dotenv, and cors.
 
-### 3. Configure Environment Variables
-After creating the Bot in Telegram you will receive an API Token.
+### 3. Telegram BOT Set Up
+Open telegram and start a chat with the **BotFather**:
+
+```bash
+https://telegram.me/BotFather
+```
+Follow the instructions to create a new Bot, starting with typing `/newbot` in the chat.
+
+After creating the Bot in Telegram you will receive an **API Token**.
 Then, create a chat with your bot in Telegram. The chat can be also a group chat, if more users needs to receive the notification. Just add the bot to your chat group, and all the users in the group chat will see the notification when the message send a message in chat.
 Visit the following URL on your browser:
 
@@ -71,6 +78,7 @@ Add your API token to the URL replacing `YOUR_BOT_TOKEN`. You will see a json fi
 ```
 This is your chat ID: `987654321`.
 
+### 4. Configure Environment Variables
 Create a `.env` file in the root of your project directory and add the following environment variables:
 
 ```env
@@ -82,7 +90,7 @@ PORT=3000 # or any other port you want your server to run on
 Replace `your_chat_id` with your Telegram chat ID. 
 Replace `your_bot_token` with the API token you received from BotFather.
 
-### 4. Run the Server
+### 5. Run the Server
 Start the server using the following command:
 
 ```bash
@@ -91,10 +99,10 @@ node server.js
 
 The server will start running on the port specified in the `.env` file (default is 3000).
 
-### 5. Trigger the Notification
+### 6. Trigger the Notification
 To trigger the Telegram notification, open the `index.html` file in a browser and click the `Notify Me` button. IF all works well you should receive a notification on your Telegram account from your Telegram Bot, and a window pop up saying `Notification sent successfully!`.
 
-### 6. Customize the Notification
+### 7. Customize the Notification
 The notification message sent to Telegram is defined in the `sendNotification` function in `notification.js` file. You can customize the message from the BOT by modifying the `message` variable.
 The function accept the `message` as prop, so you can run the function in different areas of your code, and pass a different message every time you call the function:
 
@@ -103,7 +111,7 @@ const message = 'This is the message the BOT will use for the notification';
 const data = await sendNotification(message);
 ```
 
-### 7. Deploy the Application
+### 8. Deploy the Application
 Once you've tested everything locally, you can deploy the server to your preferred hosting environment (e.g., DigitalOcean, Heroku) to make it accessible online.
 
 ## Troubleshooting
