@@ -41,7 +41,7 @@ Follow the instructions to create a new Bot, starting with typing `/newbot` in t
 
 After creating the Bot in Telegram you will receive an **API Token**.
 Then, create a chat with your bot in Telegram. The chat can be also a group chat, if more users needs to receive the notification. Just add the bot to your chat group, and all the users in the group chat will see the notification when the message send a message in chat.
-Visit the following URL on your browser:
+Start chatting with the BOT, and after you send a message in chat, visit the following URL on your browser:
 
 ```bash
 https://api.telegram.org/botYOUR_BOT_TOKEN/getUpdates
