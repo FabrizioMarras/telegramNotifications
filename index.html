@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="notifyMe">Notify Me</button>
+    <script>
+        document.getElementById('notifyMe').addEventListener('click', () => {
+                  fetch('http://localhost:1234/notification', {
+                      method: 'POST', // We're using a POST request
+                      headers: {
+                          'Content-Type': 'application/json'
+                      },
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                    console.log(data)
+                      if (data.error) {
+                          alert('Error sending notification: ' + data.error);
+                      } else {
+                          alert('Notification sent successfully!');
+                          console.log('Server response:', data);
+                      }
+                  })
+                  .catch(error => {
+                      console.error('Error:', error);
+                      alert('Failed to send the notification');
+                  });
+              });
+      </script>
+</body>
+</html>
