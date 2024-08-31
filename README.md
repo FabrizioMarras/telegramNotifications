@@ -99,6 +99,7 @@ The notification message sent to Telegram is defined in the `sendNotification` f
 The function accept the `message` as prop, so you can run the function in different areas of your code, and pass a different message every time you call the function:
 
 ```bash
+const message = 'This is the message the BOT will use for the notification';
 const data = await sendNotification(message);
 ```
 
